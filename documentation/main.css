@@ -1,0 +1,164 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+
+
+body {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.title-bar {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.menu {
+    padding-bottom: 2rem;
+}
+
+.mario-logo {
+    height: 50px;
+}
+
+.nav-bar {
+    overflow: scroll;
+    height: 100vh;
+    position: fixed;
+    width: 20rem;
+}
+
+.main-content {
+    max-width: 80%;
+    position: absolute;
+    margin-left:21rem;
+    margin-bottom:3rem;
+    margin-right: 3rem;
+}
+
+.container {
+    margin-top: 15px;
+}
+
+.image {
+    width: 350px;
+    opacity: 0.8;
+    display: inline-block;
+    margin: 5px;
+    transform: scale(0.9);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.image:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.title-heading {
+}
+
+.main-section h1 {
+    padding: 10px;
+}
+
+.main-section p {
+    padding: 10px;
+}
+
+.main-section code {
+    color: grey;
+    display: block;
+    text-align: left;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.main-section ol {
+    margin-left: 3rem;
+    margin-right: 1rem;
+}
+
+.main-section ol li {
+    padding: 2px;
+}
+
+.main-section ul {
+    margin-left: 3rem;
+    margin-right: 1rem;
+}
+
+.main-section ul li {
+    padding: 2px;
+}
+
+.section-divider {
+    margin-top: 2rem;
+}
+
+.code {
+    font-family: monospace;
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    padding: .2em .4em;
+}
+
+.performance-tips {
+    list-style-type: disc;
+}
+
+
+.heart {
+    color: #e25555;
+    margin:0px 8px;
+    display: inline-block;
+    -webkit-animation: heart-bump 5s ease-in-out infinite alternate;
+    animation: heart-bump 0.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes heart-bump {
+    0% {
+        -webkit-transform: scale(1.4);
+    }
+    100% {
+        -webkit-transform: scale(1.6);
+    }
+}
+
+@keyframes heart-bump {
+    0% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1.6);
+    }
+}
+
+.heart-div {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.title-bar-m {
+    display:none;
+}
+
+.title-heading-m {
+    display:none;
+}
+
+.footer {
+    font-family: monospace;
+    text-align: center;
+}

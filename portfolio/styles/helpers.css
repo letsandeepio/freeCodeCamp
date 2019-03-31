@@ -1,0 +1,36 @@
+.center, .center-column, .top, .right, .bottom, .left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-column {
+    flex-direction: column;
+}
+
+.top    { align-items:     flex-start; }
+.right  { justify-content: flex-end;   }
+.bottom { align-items:     flex-end;   }
+.left   { justify-content: flex-start; }
+
+.single-spaced, .single-spaced * {
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+	.desktop {
+		display: none;
+	}
+}
+
+
+/* copied from https://codepen.io/anon/pen/xagpgd
+
+.has-equal-height {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+  }
+  .has-equal-height .card-footer {
+	margin-top: auto;
+  } */

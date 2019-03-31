@@ -1,0 +1,151 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+.archia {
+    font-family: 'archiaregular' !important;
+    font-size: 1.4rem;
+    color: black
+}
+
+.highlights {
+    padding-top: 12rem;
+}
+
+.curtain-container {
+    background-color: #efefef;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -2;
+}
+
+.product-title, 
+.desc, 
+.price,
+.buy-btn
+{
+    opacity: 0;
+}
+
+#js--nav-links li {
+    display: inline-block;
+    opacity: 0;
+}
+
+#js--nav-bar figure{
+ opacity: 0;
+}
+#js--nav-bar figure:hover {
+    color: grey;
+   }
+
+
+.section-feature {
+    padding-top: 8rem;
+}
+
+.section-subscribe {
+    background: #efefef;
+}
+
+
+.input {
+    height: 1.8rem;
+}
+
+.drone {
+    width: 300px;
+    height: auto;
+}
+
+.extra-padding {
+padding: 0.5rem;
+}
+
+
+.faq {
+    margin-top: 3rem;
+}
+
+#js--dji-logo {
+    opacity: 0;
+} 
+
+.Logo__icon___132Gt {
+    height: 36px;
+    width: 63px;
+}
+
+
+.heart {
+    color: #e25555;
+    margin:0px 8px;
+    -webkit-animation: leaves 5s ease-in-out infinite alternate;
+    animation: leaves 0.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes leaves {
+    0% {
+        -webkit-transform: scale(1.4);
+    }
+    100% {
+        -webkit-transform: scale(1.6);
+    }
+}
+
+@keyframes leaves {
+    0% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1.6);
+    }
+}
+
+.block-revealer__element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#js--also-see,
+#js--product-list li {
+    opacity: 0;
+} 
+
+.content__title {
+
+    padding: 0 10px;
+}
+
+h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 150%;
+    line-height: 1.4;
+}
+
+h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 100%;
+    line-height: 1.6;
+}
+
+a,
+a:active {
+    color: black
+}
+
+a:hover {
+    color: grey;
+}

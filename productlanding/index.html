@@ -1,0 +1,437 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- <link rel="stylesheet" href="styles/debug.css"> -->
+    <link rel="stylesheet" href="styles/helpers.css">
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Animation Related  -->
+    <script src="js/main.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body onLoad="domLoaded();">
+    <header id="header">
+        <section class="hero">
+            <nav class="hero-head" id="nav-bar">
+                <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+                    <div class="column left">
+                        <ul id="js--nav-links">
+                            <li class="navbar-item has-text-black"><a class="nav-link" href="#section-feature">FEATURES</a></li>
+                            <li class="navbar-item has-text-black"><a class="nav-link" href="#video">VIDEO</a></li>
+                            <li class="navbar-item has-text-black"><a class="nav-link" href="#specs">SPECS</a></li>
+                            <li class="navbar-item has-text-black"><a class="nav-link" href="#faq">FAQ</a></li>
+                            <li class="navbar-item has-text-black"><a class="nav-link" href="#subscribe">SUBSCRIBE</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="column center">
+                        <svg class="Logo__icon___132Gt" id="js--dji-logo">
+                            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-360.000000, -13.000000)" fill="#3B3E40">
+                                    <path
+                                        d="M376.778732,25.9629248 L379.903933,13 L386.749253,13 L383.192036,27.7457808 C382.507279,30.591657 380.372581,31.275795 378.399146,31.275795 L362.624972,31.275795 C360.886884,31.275795 359.431622,30.543384 360.219727,27.2565602 L361.641631,21.3745553 C362.360155,18.3911618 364.598406,17.7106747 366.216979,17.7106747 L377.227528,17.7106747 L376.339759,21.3861164 L370.718448,21.3861164 C369.892278,21.3861164 369.439389,21.5627794 369.209158,22.5185038 L368.300719,26.2756852 C367.977169,27.6210417 368.452365,27.7145453 369.44778,27.7145453 L374.598397,27.7145453 C375.541217,27.7145453 376.37107,27.6553196 376.778732,25.9629248 Z M395.351144,17.6650384 L392.129962,31.2336069 L398.780046,31.2336069 L402,17.6650384 L395.351144,17.6650384 Z M384.526008,28.8597108 C383.913901,31.4003313 382.148186,32.2570757 380.372647,32.4043287 C380.196853,32.4260313 375.236355,32.4014891 375.236355,32.4014891 L374.120811,37 L383.44771,37 C385.889996,37 389.497556,35.7617365 390.787666,30.4186449 L393.88565,17.6650384 L387.236589,17.6650384 L384.526008,28.8597108 Z"
+                                        id="Combined-Shape"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="column right desktop">
+                        <div class="column right" id="js--nav-bar">
+                            <a href="#video">
+                                <figure class="navbar-item image center">
+                                    <i class="fab fa-facebook-f" style="width: 1rem; height: 1rem;"></i>
+                                </figure>
+                            </a><a href="#video">
+                                <figure class="navbar-item image center">
+                                    <i class="fab fa-instagram" style="width: 1rem; height: 1rem;"></i>
+                                </figure>
+                            </a>
+                            <a href="#video">
+                                <figure class="navbar-item image center">
+                                    <i class="fab fa-twitter" style="width: 1rem; height: 1rem;"></i>
+                                </figure>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="hero-body">
+                <div id="js--drone-div" style="position:absolute; opacity:0">
+                    <img src="img/drone.png" class="drone" id="header-img">
+                </div>
+                <section class="section highlights">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class='content' id="js--highlight-content">
+                                    <h1 class="product-title archia">Mavic Pro Platinum</h1>
+
+                                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
+                                        culpa veniam
+                                        enim quam, sunt officiis, maiores quod esse molestias a!</p>
+
+                                    <p class="price"><span class="tag is-warning is-small archia">USD 999</span></p>
+
+                                    <button class="buy-btn button archia is-medium">Purchase Now</button>
+                                </div>
+                            </div>
+
+                            <div class="column center">
+                                <div style="display:flex; justify-items: center; justify-items: ">
+                                    <h6 id="rev-13" class="block-revealer content__title"
+                                        style="align-self: center; align-content: center;">
+                                        <div class="block-revealer__content"
+                                            style="opacity: 1; transform: translateY(0px);">INTRODUCING</div>
+                                        <div class="block-revealer__element"
+                                            style="transform: scaleY(0); transform-origin: 50% 0px; background-color: rgb(193, 192, 183); opacity: 1;">
+                                        </div>
+                                    </h6>
+
+                                    <h5 id="rev-12" class="block-revealer content__title"
+                                        style="align-self: flex-start; justify-self: center;">
+                                        <div class="block-revealer__content"
+                                            style="opacity: 1; transform: translateY(0px);">DJI MAVIC PRO</div>
+                                        <div class="block-revealer__element"
+                                            style="transform: scaleY(0); transform-origin: 50% 0px; background-color: rgb(193, 192, 183); opacity: 1;">
+                                        </div>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="column top right">
+                                <div class="extra-padding" id="js--products-box">
+                                    <div class="extra-padding center">
+                                        <div id="js--also-see" class="card-title has-text-weight-bold">ALSO SEE</div>
+                                    </div>
+                                    <div class="content extra-padding">
+                                        <ul id="js--product-list" class="heading has-text-weight-bold">
+                                            
+                                                <li class="navbar-item"><a href="#specs">model s</a></li>
+                                                <li class="navbar-item"><a href="#specs">model x</a></li>
+                                                <li class="navbar-item"><a href="#specs">model t</a></li>
+                    
+                                    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <div id="js--curtain" class="curtain-container">
+
+        </div>
+
+    </header>
+
+    <section class="section section-feature" id="section-feature">
+        <div class="container">
+            <div class="title is-level-7 center">Features</div>
+        </div>
+        <div class="level-item">
+            <div class="subtitle is-level-6">Unparallel product placement lines goes here</div>
+        </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header-title is-centered">Brand New Gimbal</div>
+                            <div class="card-header-icon">
+                                <figure class="image is-64x64">
+                                    <img src="img/icon-gimbal.png">
+                                                            </figure>
+                                                </div>
+                                            </div>
+                                                <div class=" card-content">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt obcaecati
+                                    autem
+                                    numquam nobis cupiditate voluptas dolores fugiat rem? Exercitationem consequatur
+                                    nulla ipsam quos reprehenderit iusto delectus inventore voluptatum aut qui.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-header-title is-centered">Extended Battery Life</div>
+                                <div class="card-header-icon">
+                                    <figure class="image is-64x64">
+                                        <img src="img/icon-battery.png">
+                                                                    </figure>
+                                                        </div>
+                                                    </div>
+                                                        <div class="card-content">
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt obcaecati
+                                        autem numquam nobis cupiditate voluptas dolores fugiat rem? Exercitationem
+                                        consequatur nulla ipsam quos reprehenderit iusto delectus inventore
+                                        voluptatum
+                                        aut qui.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-header-title is-centered">Better Range Coverage</div>
+                                    <div class="card-header-icon">
+                                        <figure class="image is-64x64">
+                                            <img src="img/icon-range.png">
+                                                                            </figure>
+                                                                </div>
+                                                            </div>
+                                                                <div class="card-content">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt
+                                            obcaecati
+                                            autem numquam nobis cupiditate voluptas dolores fugiat rem?
+                                            Exercitationem
+                                            consequatur nulla ipsam quos reprehenderit iusto delectus inventore
+                                            voluptatum aut qui.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container center">
+            <iframe width="853" height="505" src="https://www.youtube.com/embed/7SembcsxrQw" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                id="video"></iframe>
+        </div>
+    </section>
+
+
+    <section class="section section-subscribe" id="subscribe">
+        <div class="container">
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <div class="title center">Subscribe</div>
+                <div class="subtitle center">to our newsletter for latest product updates</div>
+                <div class="columns is-mobile">
+                    <div class="column right">
+                        <label for="email">Pease senter your email</label>
+                    </div>
+                    <div class="left column">
+                        <input type="email" class="input" id="email" name="email" placeholder="email">
+                    </div>
+
+                    <div class="left column">
+                        <input type="submit" id="submit" name="submit" class="button is-warning">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="section" id="specs">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-one-third">
+                    <article class="media notification has-background-white">
+                        <figure class="media-left">
+                            <span class="icon has-text-grey-light">
+                                <i class="fab fa-fly fa-lg"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-6">FLY FURTHER</h1>
+                                <p class="subtitle is-size-6">
+                                    However bat fled much arduously much giraffe that tolerant laudably aside wherever
+                                    towards sentimentally apart.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+
+                <div class="column is-one-third">
+                    <article class="media notification has-background-white">
+                        <figure class="media-left">
+                            <span class="icon has-text-grey-light">
+                                <i class="fab fa-cloudversify fa-lg"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-6">NO BUMPS AND SCRAPES
+                                </h1>
+                                <p class="subtitle is-size-6">
+                                    Jeez snorted providently wow ape a clear after much infallibly wisely therefore
+                                    impalpably flustered flung ouch immensely fought and.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+
+                <div class="column is-one-third">
+                    <article class="media notification has-background-white">
+                        <figure class="media-left">
+                            <span class="icon has-text-grey-light">
+                                <i class="far fa-dot-circle fa-lg"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-6">PRECISION HOVER
+                                </h1>
+                                <p class="subtitle is-size-6">
+                                    Waspishly gazelle anxiously circa thought hippopotamus ouch depending and jeez
+                                    extensive darn leaned sped innocuously clenched patient
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+
+                <div class="column is-one-third">
+                    <article class="media notification has-background-white">
+                        <figure class="media-left">
+                            <span class="icon has-text-grey-light">
+                                <i class="far fa-clock fa-lg"></i> </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-6">STAY FLYING LONGER
+                                </h1>
+                                <p class="subtitle is-size-6">
+                                    Much less echidna before hiccupped in until hey dear up yikes walked where jeez.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+
+                <div class="column is-one-third">
+                    <article class="media notification has-background-white">
+                        <figure class="media-left">
+                            <span class="icon has-text-grey-light">
+                                <i class="fas fa-tv"></i> </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-6">4K ULTRA HD VIDEO
+                                </h1>
+                                <p class="subtitle is-size-6">
+                                    Among one this grizzly naked off wept less without much concrete ouch until off so
+                                    coughed some affectionately.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+
+                <div class="column is-one-third">
+                    <article class="media notification has-background-white">
+                        <figure class="media-left">
+                            <span class="icon has-text-grey-light">
+                                <i class="fab fa-skyatlas fa-lg"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-6">PHOTOS WITH ALTITUDE
+                                </h1>
+                                <p class="subtitle is-size-6">
+                                    Breezily earnest the overtook after slept robust temperately fallaciously outside
+                                    loud this this macaw beneath hyena crud groundhog that one.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section" id="faq">
+        <div class="container">
+            <h1 class="title center">Frequently Asked Questions (FAQ)</h1>
+            <h2 class="subtitle center">
+                A simple container to divide your page into sections, like the one you're currently reading
+            </h2>
+        </div>
+        <div class="container faq">
+            <div class="content">
+                <div class="card">
+                    <div class="card-content">
+                        <p><strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry.?</strong>
+                        </p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p><strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry.?</strong>
+                        </p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p><strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry.?</strong>
+                        </p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer has-background-grey-lighter">
+        <div class="content has-text-centered">
+            <p>
+                a <strong>freecodecamp</strong> project. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+        </div>
+
+        <div class="center">Made with <div class="heart">&hearts;</div> in toronto by Sandeep</div>
+
+
+    </footer>
+</body>
+
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<script src="js/animation.js"></script>
+
+</html>

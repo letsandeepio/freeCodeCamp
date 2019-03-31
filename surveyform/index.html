@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,700" rel="stylesheet">
+    <link rel="stylesheet" href="milligram.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="row form-header">
+
+        <div class="logo-container">
+            <img src="logo.png" class="logo">
+        </div>
+
+        <div class="hero-text">
+            <h1 id="title">Book a Hiking Trip</h1>
+            <h2 id="sub-title">Get ready for the biggest adventure of your life.</h2>
+        </div>
+
+
+    </header>
+
+    <div class="form-container clearfix">
+
+        <div class="column description-container">
+            <p id="description">Please fill in the details below. Our representative will contact you shortly.</p>
+        </div>
+
+
+        <div class="row form-elements">
+            <div class="column">
+                <form action="" id="survey-form">
+                    <label for="name" id="name-label">name</label>
+                    <input type="text" id="name" required placeholder="enter your name here">
+                    <label for="email" id="email-label">e-mail</label>
+                    <input type="email" id="email" required placeholder="enter your email here">
+                    <label for="number" id="number-label">phone</label>
+                    <input type="number" id="number" required placeholder="enter some number" min="10" max="100">
+                    <label for="dropdown" id="number-label">I am interested in</label>
+                    <select id="dropdown">
+                        <option value="1">The Great Divide Trail</optoon>
+                        <option value="2">Bruce Trail</optio>
+                        <option value="3">Newfoundland T'Railway Provincial Park</option>
+                        <option value="4">Kettle Valley Rail Trail</option>
+                        <option value="5">Confederation Trail</option>
+                    </select>
+                    <br>
+                    <label for="gender">gender</label>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                    <br>
+                    <div class="checkboxes-div">
+                        <input type="checkbox" id="gear" name="gear" value="value" checked>
+                        I am interested in renting the gear for the trail!<br>
+
+                        <input type="checkbox" id="solo" name="solo" value="solo">
+                        I am interested in solo travel!
+                    </div>
+                    <label for="comments">addition information & request </label>
+                    <textarea id="comments" name="comments"></textarea>
+                    <button id="submit" action="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer"> Made with <span style="color: #e25555;">&hearts;</span> in toronto by Sandeep</div>
+    </div>
+  
+</body>
+<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+
+</html>

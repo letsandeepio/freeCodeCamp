@@ -1,0 +1,652 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Documentation for Anime.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="queries.css">
+
+    <!-- <link rel="stylesheet" href="debug.css"> -->
+</head>
+
+<body>
+        <div class="title-bar-m"><img src="img/mario-logo.png" class="mario-logo"></div>
+        <div class="heading has-text-weight-bold has-text-centered is-size-6 title-heading-m">Table of contents</div>
+    <nav class="nav-bar" id="navbar">
+        <header><div class="heading has-text-weight-bold has-text-centered is-size-6 title-heading">Table of contents</div></header>
+        <aside class="menu">
+            <p class="menu-label">
+                General
+            </p>
+            <ul class="menu-list">
+                <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+                <li><a href="#Demos">Demos</a></li>
+            </ul>
+            <p class="menu-label">
+                Getting started
+            </p>
+            <ul class="menu-list">
+                <li><a href="#NPM_Setup" class="nav-link">NPM Setup</a></li>
+                <li><a href="#Basic_Browser_Setup" class="nav-link">Basic Browser Setup</a></li>
+                <li><a href="#Usage_With_React_etc" class="nav-link">Usage With React etc</a></li>
+            </ul>
+            <p class="menu-label">
+                Documentation
+            </p>
+            <ul class="menu-list">
+                    <li><a href="#Presets" class="nav-link">Presets</a></li>
+                    <li><a href="#Custom_Animations" class="nav-link">Custom Animations</a></li>
+                    <li><ul class="menu-list">
+                        <li><a href="#Special_Values" class="nav-link">Special Values</a></li>
+                        <li><a href="#Calculated_Values" class="nav-link">Calculated Values</a></li>
+                        <li><a href="#Options" class="nav-link">Options</a></li>
+            </ul>
+            </li>
+            <li><a href="#Responsive_Design" class="nav-link">Responsive Design</a></li>
+            <li><a href="#Supported_Presets" class="nav-link">Supported Presets</a></li>
+            <li><a href="#Supported_Attribute_Keys" class="nav-link">Supported Attribute Keys</a></li>
+            <li><a href="#Sprite_Sheet_Animations" class="nav-link">Sprite Sheet Animations</a></li>
+            <li><a href="#Custom_Presets" class="nav-link">Custom Presets</a></li>
+            <li><a href="#Performance_Tips" class="nav-link">Performance Tips</a></li>
+            <li><a href="#Notes" class="nav-link">Notes</a></li>
+            <li><a href="#To_Do" class="nav-link">To Do</a></li>
+            </ul>
+        </aside>
+    </nav>
+    <main class="main-content" id="main-doc">
+        <div class="title-bar"><img src="img/mario-logo.png" class="mario-logo"></div>
+        <section class="main-section" id="Introduction"> 
+            <header>
+                <h1 class="title is-size-3">Introduction</h1>
+            </header>
+            <p>
+                Simple & light weightvanilla javascript plugin to create smooth & beautiful animations when you
+                scroll. Harness the power of the most intuitive interaction and make your websites come alive!
+
+            </p>
+
+
+            <h1 class="title is-size-3" id="Demos">Demos</h1>
+            <figure class="image">
+                <a href="https://alexfox.dev/laxxx/" target="_blank">
+                    <img src="img/68747470733a2f2f692e696d6775722e636f6d2f4a626b6e6138302e676966.gif">
+                </a>
+            </figure>
+            <figure class="image">
+                <a href="https://alexfox.dev/laxxx/sprite.html" target="_blank">
+                    <img src="img/68747470733a2f2f692e696d6775722e636f6d2f4747514675635a2e676966.gif">
+                </a>
+            </figure>
+        </section>
+        <h1 class="title is-size-1 section-divider">Getting Started</h1>
+        <section class="main-section" id="NPM_Setup">
+            <header>
+                <h1 class="title is-size-3">NPM Setup</h1>
+            </header>
+            <p>
+                <code>$ npm install lax.js</code>
+                <code>import lax from 'lax.js'</code>
+            </p>
+        </section>
+
+        <section class="main-section" id="Basic_Browser_Setup">
+            <header>
+                <h1 class="title is-size-3">Basic Browser Setup</h1>
+            </header>
+            <ol>
+                <li>Add lax.js to your html
+                    <code>&#x3C;script src=&#x22;lib/lax.min.js&#x22;&#x3E;&#x3C;/script&#x3E;</code></li>
+                <li>Initialize the plugin
+                    <code class="language-javascript">
+    window.onload = function() {<br>
+        lax.setup() // init<br>
+
+        const updateLax = () => {<br>
+            lax.update(window.scrollY)<br>
+            window.requestAnimationFrame(updateLax)<br>
+        }<br>
+
+        window.requestAnimationFrame(updateLax)<br>
+    }
+            </code>
+                </li>
+                <li>Add class and attributes to the HTML tags you want to animate e.g.
+                    <code>&#x3C;p class=&#x22;lax&#x22; data-lax-preset=&#x22;spin fadeInOut&#x22;&#x3E;<br>Look at me goooooo!<br>&#x3C;/p&#x3E;</code>
+                </li>
+                <li>Scroll and enjoy!</li>
+            </ol>
+        </section>
+
+        <section class="main-section" id="Usage_With_React_etc">
+            <header>
+                <h1 class="title is-size-3">Usage With React etc</h1>
+            </header>
+            <p>
+                To increase performance lax.js indexes the list of elements to animate when the page loads. If you're
+                using a library like React or vue.js, it is likely that you are adding elements after the initial <span
+                    class="code">window.onload.</span> Because of this you will need to call <span
+                    class="code">lax.addElement(domElement)</span> when you add components to the DOM that you want to
+                animate.</p>
+            <p>See below for working examples:</p>
+            <ul>
+                <li><a href="https://codepen.io/alexfoxy/pen/PLaKaE">react</a></li>
+                <li><a href="https://codepen.io/alexfoxy/pen/ZPRZBq">vue</a></li>
+            </ul>
+            <p>
+                You can also call <span class="code">lax.removeElement(domElement)</span> when the component unmounts.
+            </p>
+        </section>
+        <h1 class="title is-size-1 section-divider">Documentation</h1>
+        <section class="main-section" id="Presets">
+            <header>
+                <h1 class="title is-size-3">Presets</h1>
+            </header>
+            <p>
+                The easiest way to get started is to use the presets via the <span class="code">data-lax-preset
+                    attribute</span>. You can chain multiple presets together for e.g. <span
+                    class="code">data-lax-preset="blurOutfadeOut spin"</span> . Some presets also support an optional
+                strength e.g. <span class="code">data-lax-preset="blurOut-50"</span>.
+
+                <a href="#Supported_Presets">See the list of Supported Presets</a > for details.
+            </p>
+        </section>
+
+        <section class="main-section" id="Custom_Animations">
+            <header>
+                <h1 class="title is-size-3">Custom Animations</h1>
+            </header>
+            <p>
+                You can easily create your own effects. Just add an attribute to your HTML tag (<a href="#Supported_Attribute_Keys">
+                see Supported Attribute
+                Keys</a>) with an array of values. These arrays take the format of <span class="code">scrollPos val,
+                    scrollPos val, ... | option=val</span> e.g:
+                <code>&#x3C;p class=&#x22;lax&#x22; data-lax-opacity=&#x22;0 1, 100 1, 200 0 | loop=200&#x22;&#x3E;
+                    &#x9;<br>I start to fade out after the window scrolls 100px
+                    &#x9;and then I&#x27;m gone by 200px!<br>
+                    &#x3C;/p&#x3E;</code>
+            </p>
+
+            <p>By default the <span class="code">scrollPos</span> is <span class="code">window.scrollY</span> but you
+                can use an element distance from the top of the screen instead. You can either pass in a selector <span
+                    class="code">data-lax-anchor="#bio"</span> or set it to use itself <span
+                    class="code">data-lax-anchor="self"</span> (this is the default for all presets) e.g.</p>
+            <code>
+                        &#x3C;p class=&#x22;lax&#x22; data-lax-opacity=&#x22;200 1, 100 1, 0 0&#x22; data-lax-anchor=&#x22;self&#x22;&#x3E;
+                        &#x9;<br>I start to fade out after I&#x27;m 100px away from the top of the window
+                        &#x9;and then I&#x27;m gone by the time I reach the top!<br>
+                        &#x3C;/p&#x3E;
+                </code>
+        </section>
+        <section class="main-section" id="Special_Values">
+            <header>
+                <h1 class="title is-size-4">Special Values</h1>
+            </header>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>vw</td>
+                        <td>window.innerWidth</td>
+                    </tr>
+                    <tr>
+                        <td>vh</td>
+                        <td>window.innerHeight</td>
+                    </tr>
+                    <tr>
+                        <td>elw</td>
+                        <td>targetElement.clientWidth</td>
+                    </tr>
+                    <tr>
+                        <td>elh</td>
+                        <td>targetElement.clientHeight</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>You can use these instead of integer values for the scrollPos e.g.</p>
+            <p><code>&#x3C;p class=&#x22;lax&#x22; data-lax-opacity=&#x22;0 1, vh 0&#x22;&#x3E;
+                            &#x9;<br>I fade out as the page scrolls down and
+                            &#x9;I&#x27;m gone when the page has scrolled the view port height!<br>
+                            &#x3C;/p&#x3E;</code></p>
+        </section>
+
+
+        <section class="main-section" id="Calculated_Values">
+            <header>
+                <h1 class="title is-size-4">Calculated Values</h1>
+            </header>
+            <p>
+                You can also use vanilla JS within <span class="code">( )</span> for calculations and access to more
+                variables e.g.
+            </p>
+            <code>&#x3C;p class=&#x22;lax&#x22; data-lax-opacity=&#x22;0 1, (document.body.scrollHeight*0.5) 0&#x22;&#x3E;
+                        &#x9;<br>I fade out as the page scrolls down and
+                        &#x9;I&#x27;m gone when the page has scrolled 50%
+                        &#x9;down the entire page height!<br>
+                        &#x3C;/p&#x3E;</code>
+        </section>
+
+        <section class="main-section" id="Options"> 
+            <header>
+                <h1 class="title is-size-4">Options</h1>
+            </header>
+            <p>
+                You can pass options into your custom animations for more control e.g.
+            </p>
+            <code>&#x3C;p class=&#x22;lax&#x22; data-lax-opacity=&#x22;0 1, 100 0, 200 100 | loop=200 offset=100 speed=2&#x22;&#x3E;
+        &#x9;<br>I start at 0 opacity and
+        &#x9;fade in and out every 50px<br>
+        &#x3C;/p&#x3E;</code>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Effect</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>loop</td>
+                        <td>modulus the input scrollY position so the animation will loop every <span
+                                class="code">loop</span> pixels</td>
+                    </tr>
+                    <tr>
+                        <td>offset</td>
+                        <td>add <span class="code">offset</span> to scrollY position so the animation will begin at this
+                            point</td>
+                    </tr>
+                    <tr>
+                        <td>speed</td>
+                        <td>multiplies the input scrollY position by <span class="code">speed</span> to change the speed
+                            of the animation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="main-section" id="Responsive_Design">
+            <header>
+                <h1 class="title is-size-3">Responsive Design</h1>
+            </header>
+            <p>
+                You can set multiple presets and animations for different screen widths. When setting up lax you need to
+                pass in your screen width breakpoints e.g.
+            </p>
+            <code class="language-javascript">
+                    lax.setup({
+                        breakpoints: { small: 0, large: 992 }
+                    })</code>
+            <p>Then you can define presets or transforms per breakpoint.</p>
+            <code>&#x3C;p class=&#x22;lax&#x22; data-lax-preset_small=&#x22;spin&#x22;&#x3E;
+                            &#x9;<br>I only spin when the screen is smaller than 992px.
+                            &#x3C;/p&#x3E;<br><br>
+                            
+                            &#x3C;p class=&#x22;lax&#x22; data-lax-scale_small=&#x22;0 1, 500 0&#x22; data-lax-scale_large=&#x22;0 1, 500 2&#x22;&#x3E;
+                            &#x9;I shrink when the screen is smaller than 992px but grow when the screen is larger 992px.
+                            &#x3C;/p&#x3E;</code>
+
+            <section class="main-section" id="Supported_Presets">
+                <header>
+                    <h1 class="title is-size-3">Supported Presets</h1>
+                </header>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Preset</th>
+                            <th>Default Strength</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>linger</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr>
+                            <td>lazy</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>eager</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>lazy</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>slalom</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>crazy</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr>
+                            <td>spin</td>
+                            <td>360</td>
+                        </tr>
+                        <tr>
+                            <td>spinRev</td>
+                            <td>360</td>
+                        </tr>
+                        <tr>
+                            <td>spinIn</td>
+                            <td>360</td>
+                        </tr>
+                        <tr>
+                            <td>spinOut</td>
+                            <td>360</td>
+                        </tr>
+                        <tr>
+                            <td>blurInOut</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>blurIn</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>blurOut</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>fadeInOut</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr>
+                            <td>fadeIn</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr>
+                            <td>fadeOut</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr>
+                            <td>driftLeft</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>driftRight</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>leftToRight</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>rightToLeft</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>zoomInOut</td>
+                            <td>0.2</td>
+                        </tr>
+                        <tr>
+                            <td>zoomIn</td>
+                            <td>0.2</td>
+                        </tr>
+                        <tr>
+                            <td>zoomOut</td>
+                            <td>0.2</td>
+                        </tr>
+                        <tr>
+                            <td>swing</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>speedy</td>
+                            <td>30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="main-section" id="Supported_Attribute_Keys">
+                <header>
+                    <h1 class="title is-size-3">Supported Attribute Keys</h1>
+                </header>
+                <p><b>transforms</b></p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Transform</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>opacity</td>
+                            <td>data-lax-opacity</td>
+                        </tr>
+                        <tr>
+                            <td>translate</td>
+                            <td>data-lax-translate</td>
+                        </tr>
+                        <tr>
+                            <td>translateX</td>
+                            <td>data-lax-translate-x</td>
+                        </tr>
+                        <tr>
+                            <td>translateY</td>
+                            <td>data-lax-translate-y</td>
+                        </tr>
+                        <tr>
+                            <td>scale</td>
+                            <td>data-lax-scale</td>
+                        </tr>
+                        <tr>
+                            <td>scaleX</td>
+                            <td>data-lax-scale-x</td>
+                        </tr>
+                        <tr>
+                            <td>scaleY</td>
+                            <td>data-lax-scale-y</td>
+                        </tr>
+                        <tr>
+                            <td>skew</td>
+                            <td>data-lax-skew</td>
+                        </tr>
+                        <tr>
+                            <td>skewX</td>
+                            <td>data-lax-skew-x</td>
+                        </tr>
+                        <tr>
+                            <td>skewY</td>
+                            <td>data-lax-skew-y</td>
+                        </tr>
+                        <tr>
+                            <td>rotate</td>
+                            <td>data-lax-rotate</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><b>Filters (note - these may be unperformant on low powered machines)</b></p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Filter</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>brightness</td>
+                            <td>data-lax-brightness</td>
+                        </tr>
+                        <tr>
+                            <td>contrast</td>
+                            <td>data-lax-contrast</td>
+                        </tr>
+                        <tr>
+                            <td>hue-rotate</td>
+                            <td>data-lax-hue-rotate</td>
+                        </tr>
+                        <tr>
+                            <td>blur</td>
+                            <td>data-lax-blur</td>
+                        </tr>
+                        <tr>
+                            <td>invert</td>
+                            <td>data-lax-invert</td>
+                        </tr>
+                        <tr>
+                            <td>saturate</td>
+                            <td>data-lax-saturate</td>
+                        </tr>
+                        <tr>
+                            <td>grayscale</td>
+                            <td>data-lax-grayscale</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><b>Others</b></p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Filter</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>background position</td>
+                            <td>data-lax-bg-pos</td>
+                        </tr>
+                        <tr>
+                            <td>background position-x</td>
+                            <td>data-lax-bg-pos-x</td>
+                        </tr>
+                        <tr>
+                            <td>background position-y</td>
+                            <td>data-lax-bg-pos-y</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="main-section" id="Sprite_Sheet_Animations">
+                <header>
+                    <h1 class="title is-size-3">Sprite Sheet Animations</h1>
+                </header>
+                <p>You can create animations using sprite sheets. See a demo here.</p>
+                <p>The <span class="code">data-lax-sprite-data</span> is required and formated like so <span
+                        class="code">[frameWidth, frameHeight, frameCount, columnCount, scrollStep]</span>. You can
+                    either set the image using CSS or the <span class="code">data-lax-sprite-image</span> attribute.
+                    e.g.
+                    <code>&#x3C;div 
+        &#x9;class=&#x22;lax&#x22;
+        &#x9;data-lax-sprite-data=&#x22;500,500,36,36,10&#x22;
+        &#x9;data-lax-sprite-image=&#x22;./spritesheet.png&#x22;
+        /&#x3E;</code>
+                </p>
+                <p>You can turn a gif or a video into a sprite sheet with this tool: https://ezgif.com/gif-to-sprite
+                </p>
+
+                <ß>
+                    Note: current implimentation requires the element to be the same size as the frame width &
+                    height.
+
+                    </p>
+
+            </section>
+
+            <section class="main-section" id="Custom_Presets">
+                <header>
+                    <h1 class="title is-size-3">Custom Presets</h1>
+                </header>
+                <p>To avoid duplicate code you can define your own presets with a list of attributes e.g.</p>
+                <code>lax.addPreset("myCoolPreset", function() {<br>
+                                return { <br>
+                                    "data-lax-opacity": "(-vh*0.8) 40, (-vh*0.6) 0",<br>
+                                    "data-lax-rotate": "(-vh*2) 1000, (-vh*0.5) 0" <br>
+                                }<br>
+                            })</code>
+
+                <p>You can then access this preset like this: </p>
+                <code>&#x3C;p class=&#x22;lax&#x22; data-lax-preset=&#x22;myCoolPreset&#x22;&#x3E;
+                                    &#x9;I&#x27;m the coolest preset in the world &#x1F60E;
+                                    &#x3C;/p&#x3E;</code>
+
+            </section>
+
+            <section class="main-section" id="Performance_Tips">
+                <header>
+                    <h1 class="title is-size-3">Performance Tips</h1>
+                </header>
+                <ul class="performance-tips">
+                    <li>Avoid nesting lax enabled elements within each other, you'll get better performance using lax
+                        with smaller elements in the dom tree.</li>
+                    <li>Avoid transforms on large elements, e.g. full screen backgrounds.</li>
+                    <li>By default elements that have opacity 0 aren't updated. You can either manually set up a <span
+                            class="code">data-lax-opacity</span> to control this yourself or use <span
+                            class="code">data-lax-optimize</span> which will set the elements opacity to 0 when it goes
+                        off -screen.</li>
+                    <li>By default <span class="code">-webkit-backface-visibility: hidden;</span> is added to your
+                        elements style to encourage the browser to render that object as a layer on the GPU and increase
+                        performance. To turn this off add <span class="code">data-lax-use-gpu="false"</span> to your
+                        element.</li>
+                </ul>
+            </section>
+
+            <section class="main-section" id="Notes">
+                <header>
+                    <h1 class="title is-size-3">Notes</h1>
+                </header>
+                <h1 class="title is-size-4">Screen Rotating & Resizing</h1>
+                <p>As some values (vh, vw, elh, elw) are calculated on load, when the screen size changes or rotates you
+                    might want to recalculate these. E.g.</p>
+                <code>window.addEventListener("resize", function() {
+                                        lax.populateElements()
+                                    });</code>
+                <p>Be warned, on mobile, a resize event is fired when you scroll and the toolbar is hidden so you might
+                    want to check if the width or orientation has changed.</p>
+
+                <h1 class="title is-size-4">Scroll Wheels</h1>
+                <p>Scroll wheels only increment the scroll position in steps which can cause the animations to look
+                    janky. You can use the SmoothScroll (http://www.smoothscroll.net/) plugin to smooth this out,
+                    however there maybe performance implications that need investigating.</p>
+                <h1 class="title is-size-4">Merging Existing Styles</h1>
+                    <p>Only inline styles for transforms and filters will be merged in to the animation. Transforms and
+                        filters derived from CSS will be overwritten.</p>
+            </section>
+            <section class="main-section" id="To_Do">
+                    <header>
+                        <h1 class="title is-size-3">To Do </h1>
+                    </header>
+                    <ul class="performance-tips">
+                            <li>Implement a tween for scroll wheels to remove reliance on smoothscroll</li>
+                            <li>A way to add weight/momentum to moving objecs</li>
+                            <li>More cool demos</li>
+                            <li>More concise read me for react / vue.js</li>
+                            <li><del>Support for sprite sheet animations</del></li>
+                            </ul>
+                    </section><br>
+
+
+                    <div class="footer">
+                        
+                        a freeCodeCamp mock project created for <a href="https://github.com/alexfoxy/laxxx" target="_blank">laxx.js library</a>
+<br><br>
+                        <div class="heart-div">Made with <div class="heart">&hearts;</div> in toronto by Sandeep</div>
+      
+
+
+
+                    </div>
+
+
+
+                    
+    </main>
+
+    
+</body>
+<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+
+</html>
